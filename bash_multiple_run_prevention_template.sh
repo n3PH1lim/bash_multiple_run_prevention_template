@@ -176,6 +176,3 @@ echo $PID 1>&200
 
 # multiple run prevention
 check_working ${WORKING_FILE} ${MAX_WORKING_TIME}
-
-
-## TEST
