@@ -23,13 +23,13 @@ readonly MAX_WORKING_TIME=5
 readonly WORKDIR=$(pwd)
 
 # get scriptname and remove dir part
-readonly SCRIPTNAME_WITH_EXTENTION=${0##*/} 
+readonly SCRIPTNAME_WITH_EXTENTION=${0##*/}
 
 # remove extension from scriptname
-readonly SCRIPTNAME=${SCRIPTNAME_WITH_EXTENTION%.*} 
+readonly SCRIPTNAME=${SCRIPTNAME_WITH_EXTENTION%.*}
 
-# set logfile name with dailysuffix  
-readonly LOGFILE=${WORKDIR}/${SCRIPTNAME}$(date +'_%Y_%m_%d').log 
+# set logfile name with dailysuffix
+readonly LOGFILE=${WORKDIR}/${SCRIPTNAME}$(date +'_%Y_%m_%d').log
 
 # set working file name for multiple run prevention
 # use scriptname with _working suffix
@@ -78,7 +78,7 @@ local STRING=$1
 
 echo -e "$(date '+%F %T'): ${STRING}"
 echo -e "$(date '+%F %T'): ${STRING}" >>${LOGFILE}
-	
+
 unset STRING
 }
 
@@ -115,11 +115,11 @@ unset FUNCTION_TEMP_FILE
 # check_working
 #
 # Parameter:
-# $1 Name of working file 
+# $1 Name of working file
 # $2 max age of working file in seconds
 #
 # Info:
-# 1. check if script already working 
+# 1. check if script already working
 # 2. write working file with exclusive filehandle
 # 3. if working file is older than n seconds delete working file
 # 4. if filehandle can not taken exit
@@ -176,3 +176,6 @@ echo $PID 1>&200
 
 # multiple run prevention
 check_working ${WORKING_FILE} ${MAX_WORKING_TIME}
+
+
+## TEST
